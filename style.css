@@ -25,6 +25,7 @@ html,body{
 
 .sidebar{
     grid-row: 1/-1;
+    z-index: 10;
 }
 
 .header{
@@ -91,12 +92,12 @@ html,body{
 .header{
     display:grid;
     grid-template-columns: 4fr 3fr;
-    grid-template-areas: "search-area user-icons-area"
+    grid-template-areas: "search-area search-area"
                          "display-name-area update-buttons-area";
 }
 
 .search{
-    grid-area:search-area;
+    /* grid-area:search-area; */
 }
 
 
@@ -105,7 +106,7 @@ html,body{
 }
 
 .user-icons{
-    grid-area:user-icons-area;
+    /* grid-area:user-icons-area; */
 }
 
 .update-buttons{
@@ -147,18 +148,123 @@ html,body{
     /* justify-content: center; */
 }
 
+.header-text{
+    font-weight: 590;
+}
+
+.project,
+.announcements:not(.header-text),
+.trending:not(.header-text){
+    box-shadow: black 0px 0px 7px -5px;
+    border-radius: 8px;
+}
+
 
 .project {
     background:white;
     height: 200px;
+    border-left: rgb(246, 186, 56) solid 8px;
 }
 
 .announcements:not(.header-text){
     background-color: white;
     height: 300px;
+
 }
 
 .trending:not(.header-text){
     background-color: white;
     height: 300px;
+}
+
+.sidebar {
+    font-weight: 700;
+    display: grid;
+    align-content: start;
+    row-gap: 40px;
+
+
+}
+
+.main-text,
+.nav,
+.user-settings{
+    height: fit-content;
+}
+
+
+.nav > ul,
+.user-settings > ul{
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.main-text{
+    font-size: 1.4rem
+}
+
+.nav li,
+.user-settings li{
+    list-style-type: none;
+    padding:0px;
+    font-size: .95rem;
+}
+
+
+
+.nav li:first-child ~ li,
+.user-settings li:first-child ~ li{
+    /* color:blue; */
+    margin-top: 12px;
+}
+
+.header{
+    box-shadow: black 0px -12px 18px 0px;
+}
+
+.search-row{
+    display: flex;
+    /* grid-row: 1/-1; */
+    /* grid-column: 1/-1; */
+    grid-area:search-area;
+    width: 100%;
+    /* gap: 20px; */
+    justify-content: space-;
+
+}
+
+.search{
+    margin-right: auto;
+    flex: 2 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-icons{
+    flex: 1 0 auto;
+    display: grid;
+    align-items: center;
+}
+
+
+
+
+input[type="search"]{
+    /* width: 80%; */
+    width: 65%;
+    border-radius: 8px;
+    border-style: none;
+    background-color: rgba(245, 245, 245, 0.891);
+    height: 25px;
+}
+
+
+input[type="search"]:focus{
+
+    outline: none;
+    padding: 10px;
+    font-style: 'Roboto',sans-serif;
+    font-size: 0.8rem;
 }
