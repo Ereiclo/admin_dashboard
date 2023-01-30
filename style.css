@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Roboto&family=Sarabun&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Roboto:wght@400;500&family=Sarabun&display=swap');
 
 :root{
     font-size:20px;
@@ -7,8 +7,10 @@
 }
 
 html,body{
+    --bg-color: #e2e8f0;
     margin: 0px;
     height: 100vh;
+
 
 }
 
@@ -20,7 +22,7 @@ html,body{
     overflow: hidden;
     row-gap: 20px;
     /* column-gap: 15px; */
-    background-color: rgba(245, 245, 245, 0.891);
+    background-color: var(--bg-color);
 }
 
 .sidebar{
@@ -46,8 +48,9 @@ html,body{
 
     overflow: auto;
     row-gap: 12px;
-    background-color: rgba(245, 245, 245, 0.891);
-    /* column-gap: 24px; */
+    background-color: var(--bg-color);
+
+
 }
 
 
@@ -149,7 +152,7 @@ html,body{
 }
 
 .header-text{
-    font-weight: 590;
+    font-weight: 500;
 }
 
 .project,
@@ -178,10 +181,11 @@ html,body{
 }
 
 .sidebar {
-    font-weight: 700;
+    font-weight: 400;
     display: grid;
     align-content: start;
     row-gap: 40px;
+
 
 
 }
@@ -201,14 +205,16 @@ html,body{
 
 
 .main-text{
-    font-size: 1.4rem
+    font-size: 1.4rem;
+    font-weight: 500;
 }
 
 .nav li,
 .user-settings li{
     list-style-type: none;
     padding:0px;
-    font-size: .95rem;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 
@@ -256,7 +262,7 @@ input[type="search"]{
     width: 65%;
     border-radius: 8px;
     border-style: none;
-    background-color: rgba(245, 245, 245, 0.891);
+    background-color: var(--bg-color);
     height: 25px;
 }
 
@@ -267,4 +273,72 @@ input[type="search"]:focus{
     padding: 10px;
     font-style: 'Roboto',sans-serif;
     font-size: 0.8rem;
+}
+
+.trending:not(.header-text)::after{
+    /* content: "<h3>holis<h3/>"; */
+    /* content: url('./star-plus-outline.svg')  url('./star-plus-outline.svg') url('./star-plus-outline.svg'); */
+
+    /* transform: scale(0.2); */
+
+    
+
+
+    /* height: 20px; */
+    /* width: auto; */
+
+}
+
+
+.project > .header-text{
+    font-weight: 500;
+    margin-top: 20px;
+    margin-left: 10px;
+    font-size:16px;
+
+}
+
+.project > p {
+
+    margin: 8px 10px;
+    font-size: 0.8rem;
+    overflow: wrap;
+    width: 90%;
+    color: #9ca3af;
+
+}
+
+.project-buttons{
+    display: flex;
+    justify-content: right;
+    margin-right:20px;
+    margin-top:25px;
+    column-gap: 10px;
+}
+
+img{
+    vertical-align: baseline;
+}
+
+.main-text,
+.nav,
+.user-settings{
+    margin-left:30px;
+
+}
+
+.main-text{
+    margin-top: 20px;
+}
+
+.main-text,
+.nav li,
+.user-settings li{
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+img:hover{
+    transform: scale(1.22);
 }
