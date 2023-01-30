@@ -16,7 +16,7 @@ html,body{
 
 .container{
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 280px 1fr;
     grid-template-rows: 150px 1fr;
     height: 100%;
     overflow: hidden;
@@ -40,7 +40,7 @@ html,body{
     grid-column: 2/-1;
     display: grid;
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: 30px 300px 30px 300px ;
+    grid-template-rows: 30px 370px 30px 340px ;
     grid-template-areas: "header-text-projects header-text-announcements" 
                          "project-area announcements-area"
                          "project-area header-text-trending"
@@ -51,6 +51,21 @@ html,body{
     background-color: var(--bg-color);
 
 
+}
+
+
+
+
+.projects{
+    grid-area:project-area;
+}
+
+.trending{
+    grid-area:trending-area;
+}
+
+.announcements{
+    grid-area:announcements-area;
 }
 
 
@@ -65,18 +80,6 @@ html,body{
 
 .header-text.trending{
     grid-area:header-text-trending;
-}
-
-.projects{
-    grid-area:project-area;
-}
-
-.trending{
-    grid-area:trending-area;
-}
-
-.announcements{
-    grid-area:announcements-area;
 }
 
 .announcements,
@@ -324,6 +327,7 @@ img{
 .nav,
 .user-settings{
     margin-left:30px;
+    margin-right: 40px;
 
 }
 
@@ -341,4 +345,49 @@ img{
 
 img:hover{
     transform: scale(1.22);
+
+}
+
+
+.announcements:not(.header-text){
+    padding: 20px 0px;
+    /* margin-top: 20px; */
+}
+
+.announcement{
+    display: grid;
+    align-items: center;
+
+    margin: 0px 24px;
+    padding: 14px 0px; 
+}
+
+
+.announcement ~ .announcement {
+    border-top:  #9ca3af solid 2px;
+}
+
+
+.header-announcement{
+    font-size: 0.9rem;
+}
+
+.announcement-text{
+
+    font-size: 0.7rem;
+    overflow: wrap;
+    /* width: 90%; */
+    color: #9ca3af;
+
+
+}
+
+
+.project{
+    /* margin-top: 10px; */
+    /* z-index: 50; */
+}
+
+.trending:not(.header-text){
+    /* margin-bottom: 20px; */
 }
