@@ -18,7 +18,7 @@ html,body{
 .container{
     display: grid;
     grid-template-columns: 280px 1fr;
-    grid-template-rows: 150px 1fr;
+    grid-template-rows: 160px 1fr;
     height: 100%;
     overflow: hidden;
     row-gap: 20px;
@@ -41,7 +41,7 @@ html,body{
     grid-column: 2/-1;
     display: grid;
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: 30px 370px 30px 340px ;
+    grid-template-rows: 30px 350px 30px 340px ;
     grid-template-areas: "header-text-projects header-text-announcements" 
                          "project-area announcements-area"
                          "project-area header-text-trending"
@@ -98,14 +98,12 @@ html,body{
 
 .header{
     display:grid;
-    grid-template-columns: 4fr 3fr;
-    grid-template-areas: "search-area search-area"
+    grid-template-columns: 8fr 3fr;
+    grid-template-areas: "search-area user-icons-area"
                          "display-name-area update-buttons-area";
 }
 
-.search{
-    /* grid-area:search-area; */
-}
+
 
 
 .display-name{
@@ -113,15 +111,16 @@ html,body{
 }
 
 .user-icons{
-    /* grid-area:user-icons-area; */
+    grid-area:user-icons-area;
 }
 
 .update-buttons{
     grid-area:update-buttons-area;
     display:flex;
-
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
+    gap:32px;
+
 }
 
 .update-buttons > button{
@@ -130,7 +129,7 @@ html,body{
     border-radius: 20px;
     color: white;
     padding: 10px ;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-family: 'Roboto';
     font-weight: 600;
     box-sizing:border-box;
@@ -233,37 +232,56 @@ html,body{
     box-shadow: black 0px -12px 18px 0px;
 }
 
-.search-row{
+/* .search-row{
     display: flex;
     /* grid-row: 1/-1; */
     /* grid-column: 1/-1; */
-    grid-area:search-area;
-    width: 100%;
+    /* grid-area:search-area; */
+    /* width: 100%; */
     /* gap: 20px; */
-    justify-content: space-;
+    /* justify-content: space-; */
 
-}
+/* }  */
 
 .search{
     margin-right: auto;
     flex: 2 0 auto;
+    grid-area:search-area;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
+    /* align-items: center; */
     align-items: center;
+    gap:15px;
+    width: 100%;
 }
 
 .user-icons{
-    flex: 1 0 auto;
-    display: grid;
+    display:flex;
+    justify-content: flex-end;
     align-items: center;
+    gap:32px;
 }
 
+.project{
+    /* margin-bottom: 20px; */
+}
+
+.search > img,
+.display-name{
+    margin-left:25px;
+}
+
+.content{
+    column-gap: 14px;
+    margin-bottom: 20px;
+}
 
 
 
 input[type="search"]{
+    width: 80%;
+    margin-right: 20px;
     /* width: 80%; */
-    width: 65%;
     border-radius: 8px;
     border-style: none;
     background-color: var(--bg-color);
@@ -411,12 +429,16 @@ img:hover{
 }
 
 
+.user-icons > img:nth-child(2),
 .trending-project > img{
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    margin-left:30px;
 
+}
+
+.trending-project > img{
+    margin-left:30px;
 }
 
 .username{
@@ -433,4 +455,39 @@ img:hover{
 .trending-user{
     display: grid;
     align-content: center;
+}
+
+
+.username-text,
+.update-buttons > button:last-child{
+    margin-right: 60px;
+}
+
+
+.user-icons{
+    font-weight: 500;
+}
+
+
+.display-name > img{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
+
+.display-name{
+    display: flex;
+    align-items: center;
+}
+
+
+
+.greetings{
+    font-weight: 500;
+    margin-left:14px;
+}
+
+.greetings > .top{
+    font-size:0.7rem;
+    margin-bottom: 5px;
 }
