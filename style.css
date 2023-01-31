@@ -8,6 +8,7 @@
 
 html,body{
     --bg-color: #e2e8f0;
+    --grey-text: #737373;
     margin: 0px;
     height: 100vh;
 
@@ -180,7 +181,7 @@ html,body{
 
 .trending:not(.header-text){
     background-color: white;
-    height: 300px;
+    height: 320px;
 }
 
 .sidebar {
@@ -307,7 +308,7 @@ input[type="search"]:focus{
     font-size: 0.8rem;
     overflow: wrap;
     width: 90%;
-    color: #9ca3af;
+    color: var(--grey-text);
 
 }
 
@@ -364,12 +365,13 @@ img:hover{
 
 
 .announcement ~ .announcement {
-    border-top:  #9ca3af solid 2px;
+    border-top:  #c7ccd5 solid 2px;
 }
 
 
 .header-announcement{
     font-size: 0.9rem;
+    font-weight: 500;
 }
 
 .announcement-text{
@@ -377,7 +379,7 @@ img:hover{
     font-size: 0.7rem;
     overflow: wrap;
     /* width: 90%; */
-    color: #9ca3af;
+    color: var(--grey-text);
 
 
 }
@@ -390,4 +392,45 @@ img:hover{
 
 .trending:not(.header-text){
     /* margin-bottom: 20px; */
+}
+
+
+.trending{
+    display: grid;
+    align-content: center;
+    row-gap:24px;
+}
+
+.trending-project{
+    display: flex;
+    gap:10px;
+}
+
+.trending-project:not(:first-child){
+    /* margin-top:20px; */
+}
+
+
+.trending-project > img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left:30px;
+
+}
+
+.username{
+    font-size:0.8rem;
+}
+
+.project-name{
+    font-size:0.7rem;
+
+    color: var(--grey-text);
+}
+
+
+.trending-user{
+    display: grid;
+    align-content: center;
 }
